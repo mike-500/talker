@@ -68,7 +68,7 @@ class TalkerMonitor extends StatelessWidget {
                         RichText(
                           text: TextSpan(
                             text: '${httpRequests.length}',
-                            style: const TextStyle(color: Colors.white),
+                            style: Theme.of(context).textTheme.bodyMedium,
                             children: const [
                               TextSpan(text: ' http requests executed')
                             ],
@@ -77,11 +77,14 @@ class TalkerMonitor extends StatelessWidget {
                         RichText(
                           text: TextSpan(
                             text: '${httpResponses.length} successful',
-                            style: const TextStyle(color: Colors.green),
-                            children: const [
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(color: Colors.green),
+                            children: [
                               TextSpan(
                                 text: ' responses received',
-                                style: TextStyle(color: Colors.white),
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ],
                           ),
@@ -89,11 +92,14 @@ class TalkerMonitor extends StatelessWidget {
                         RichText(
                           text: TextSpan(
                             text: '${httpErrors.length} failure',
-                            style: const TextStyle(color: Colors.red),
-                            children: const [
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(color: Colors.red),
+                            children: [
                               TextSpan(
                                 text: ' responses received',
-                                style: TextStyle(color: Colors.white),
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ],
                           ),

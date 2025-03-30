@@ -161,7 +161,7 @@ class _TalkerViewAppBarState extends State<TalkerViewAppBar>
                               Border.all(color: widget.talkerTheme.textColor),
                           borderRadius: BorderRadius.circular(10),
                           color: selected
-                              ? theme.colorScheme.primaryContainer
+                              ? theme.colorScheme.secondaryContainer
                               : widget.talkerTheme.cardColor,
                         ),
                         child: Row(
