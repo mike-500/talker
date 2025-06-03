@@ -41,7 +41,7 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
     final theme = Theme.of(context);
     final settings = <Widget>[
       Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Text(
           'Basic settings',
           style: theme.textTheme.titleLarge?.copyWith(
@@ -203,7 +203,7 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 16),
+          // const SizedBox(height: 16),
           ...settings,
         ],
       ),
