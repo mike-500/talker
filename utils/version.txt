@@ -1,4 +1,4 @@
-4.8.3
-4.8.4
-[talker_riverpod_logger] add family arguments to the logs
-lucavenir
+4.9.0
+4.9.1
+[talker_http_logger] chore(deps): update plugin org.jetbrains.kotlin.android to v2
+renovate
