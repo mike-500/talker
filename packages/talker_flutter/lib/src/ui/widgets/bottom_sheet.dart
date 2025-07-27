@@ -45,8 +45,8 @@ class BaseBottomSheet extends StatelessWidget {
                     Expanded(
                       child: Text(
                         title,
-                        style: theme.textTheme.headlineSmall
-                            ?.copyWith(color: talkerScreenTheme.textColor),
+                        style: theme.textTheme.headlineSmall?.copyWith(
+                            color: talkerScreenTheme.textColor, fontSize: 28),
                       ),
                     ),
                     InkWell(
