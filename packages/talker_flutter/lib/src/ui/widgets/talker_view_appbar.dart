@@ -88,7 +88,7 @@ class _TalkerViewAppBarState extends State<TalkerViewAppBar>
       _spaceBarHeight = searchFieldRenderBox.size.height +
           groupBtnRenderBox.size.height +
           _defaultToolbarHeight +
-          _padding;
+          (_padding * 2);
     });
   }
 
@@ -108,6 +108,7 @@ class _TalkerViewAppBarState extends State<TalkerViewAppBar>
       toolbarHeight: _defaultToolbarHeight,
       leading: widget.leading,
       iconTheme: IconThemeData(color: widget.talkerTheme.textColor),
+      shape: shape,
       actions: [
         UnconstrainedBox(
           child: _MonitorButton(
@@ -209,6 +210,7 @@ class _TalkerViewAppBarState extends State<TalkerViewAppBar>
                   controller: widget.controller,
                   talkerTheme: widget.talkerTheme,
                 ),
+                const SizedBox(height: _padding),
               ],
             ),
           ),
