@@ -1,3 +1,8 @@
+# 5.1.10
+- [talker_flutter] Fix WebAssembly incompatible cast in download_logs_web.dart
+
+Thanks to [JanKubicek](https://github.com/JanKubicek), [Copilot](https://github.com/Copilot)
+
 # 5.1.9
 - [talker_flutter] Fix TalkerScreen stack trace display for TalkerLog objects
 
