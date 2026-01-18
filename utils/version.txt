@@ -1,4 +1,4 @@
-5.1.10
 5.1.11
-[talker_flutter] Update plugin org.jetbrains.kotlin.android to v2.3.0
+5.1.12
+[common] Update Gradle to v9.3.0
 renovatebot
