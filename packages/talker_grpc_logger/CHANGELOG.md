@@ -1,3 +1,15 @@
+# 5.1.12
+- [common] Update Gradle to v9.3.0
+- [common] Update plugin com.android.application to v9
+
+Thanks to [renovatebot](https://github.com/renovatebot)
+
+# 5.1.11
+- [talker_flutter] Update plugin org.jetbrains.kotlin.android to v2.3.0
+- [talker_flutter] Update Gradle to v9.2.1
+
+Thanks to [renovatebot](https://github.com/renovatebot)
+
 # 5.1.10
 - [talker_flutter] Fix WebAssembly incompatible cast in download_logs_web.dart
 
