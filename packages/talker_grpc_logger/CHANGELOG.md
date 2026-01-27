@@ -1,3 +1,8 @@
+# 5.1.13
+- [common] Fix trailing curly bracket in stacktrace output
+
+Thanks to [Copilot](https://github.com/Copilot)
+
 # 5.1.12
 - [common] Update Gradle to v9.3.0
 - [common] Update plugin com.android.application to v9
