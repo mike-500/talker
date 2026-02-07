@@ -118,6 +118,11 @@ class _TalkerViewState extends State<TalkerView> {
                       childCount: filteredElements.length,
                     ),
                   ),
+                  SliverPadding(
+                    padding: EdgeInsetsGeometry.only(
+                      bottom: MediaQuery.paddingOf(context).bottom,
+                    ),
+                  ),
                 ],
               );
             },
