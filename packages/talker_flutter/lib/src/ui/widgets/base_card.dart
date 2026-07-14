@@ -17,6 +17,8 @@ class TalkerBaseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final shape = Theme.of(context).cardTheme.shape;
+
     return Container(
       width: double.infinity,
       padding: padding,
@@ -24,7 +26,9 @@ class TalkerBaseCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         border: Border.all(color: color),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: shape is RoundedRectangleBorder
+            ? shape.borderRadius
+            : BorderRadius.circular(10),
       ),
       child: child,
     );

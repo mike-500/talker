@@ -88,7 +88,7 @@ class _TalkerViewAppBarState extends State<TalkerViewAppBar>
       _spaceBarHeight = searchFieldRenderBox.size.height +
           groupBtnRenderBox.size.height +
           _defaultToolbarHeight +
-          _padding;
+          (_padding * 2);
     });
   }
 
@@ -96,6 +96,8 @@ class _TalkerViewAppBarState extends State<TalkerViewAppBar>
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final uniqKeys = widget.uniqKeys..removeWhere((e) => e == null);
+    final shape = theme.chipTheme.shape;
+
     return SliverAppBar(
       backgroundColor: widget.talkerTheme.backgroundColor,
       elevation: 0,
@@ -106,6 +108,7 @@ class _TalkerViewAppBarState extends State<TalkerViewAppBar>
       toolbarHeight: _defaultToolbarHeight,
       leading: widget.leading,
       iconTheme: IconThemeData(color: widget.talkerTheme.textColor),
+      shape: shape,
       actions: [
         UnconstrainedBox(
           child: _MonitorButton(
@@ -166,9 +169,11 @@ class _TalkerViewAppBarState extends State<TalkerViewAppBar>
                         decoration: BoxDecoration(
                           border:
                               Border.all(color: widget.talkerTheme.textColor),
-                          borderRadius: BorderRadius.circular(10),
+                          borderRadius: shape is RoundedRectangleBorder
+                              ? shape.borderRadius
+                              : BorderRadius.circular(10),
                           color: selected
-                              ? theme.colorScheme.primaryContainer
+                              ? theme.colorScheme.secondaryContainer
                               : widget.talkerTheme.cardColor,
                         ),
                         child: Row(
@@ -205,6 +210,7 @@ class _TalkerViewAppBarState extends State<TalkerViewAppBar>
                   controller: widget.controller,
                   talkerTheme: widget.talkerTheme,
                 ),
+                const SizedBox(height: _padding),
               ],
             ),
           ),
@@ -232,6 +238,8 @@ class _SearchTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final shape = theme.inputDecorationTheme.border;
+
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: TextFormField(
@@ -244,11 +252,15 @@ class _SearchTextField extends StatelessWidget {
           fillColor: talkerTheme.backgroundColor,
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(color: talkerTheme.textColor),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: shape is OutlineInputBorder
+                ? shape.borderRadius
+                : BorderRadius.circular(10),
           ),
           border: OutlineInputBorder(
             borderSide: BorderSide(color: talkerTheme.textColor),
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: shape is OutlineInputBorder
+                ? shape.borderRadius
+                : BorderRadius.circular(10),
           ),
           contentPadding: const EdgeInsets.symmetric(vertical: 16),
           prefixIcon: Icon(
