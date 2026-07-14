@@ -1,3 +1,16 @@
+# 5.1.19
+- [talker_flutter] Bump path_provider version from 2.1.4 to 2.1.6
+- [talker_flutter] Bump share_plus version from 3.0.0 to 3.2.0
+- [talker_flutter] Bump web version from 1.1.0 to 1.1.1
+
+Thanks to [Frezyx](https://github.com/Frezyx)
+
+# 5.1.18
+- [common] Update plugin com.android.application to v9.2.1
+- [common] Update Gradle to v9.5.0
+
+Thanks to [renovatebot](https://github.com/renovatebot)
+
 # 5.1.17
 - [talker_flutter] chore: bump share_plus from ^12.0.1 to ^13.0.0
 - [talker_flutter] fix: remove share_plus dependency to avoid Flutter KGP warning from transitive Android plugin setup
