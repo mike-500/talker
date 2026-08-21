@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/src/ui/widgets/base_card.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
@@ -32,19 +32,21 @@ class TalkerSettingsCard extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8),
           color: talkerScreenTheme.textColor,
           backgroundColor: talkerScreenTheme.cardColor,
-          child: ListTile(
-            contentPadding: const EdgeInsets.symmetric(horizontal: 8),
-            title: Text(
-              title,
-              style: TextStyle(
-                color: talkerScreenTheme.textColor,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
+          child: Material(
+            child: ListTile(
+              contentPadding: const EdgeInsets.symmetric(horizontal: 8),
+              title: Text(
+                title,
+                style: TextStyle(
+                  color: talkerScreenTheme.textColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                ),
               ),
-            ),
-            trailing: CupertinoSwitch(
-              value: enabled,
-              onChanged: canEdit ? onChanged : null,
+              trailing: CupertinoSwitch(
+                value: enabled,
+                onChanged: canEdit ? onChanged : null,
+              ),
             ),
           ),
         ),

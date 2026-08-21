@@ -1,6 +1,6 @@
 // ignore_for_file: invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/src/ui/talker_settings/widgets/talker_setting_card.dart';
 import 'package:talker_flutter/src/ui/widgets/bottom_sheet.dart';
 import 'package:talker_flutter/talker_flutter.dart';

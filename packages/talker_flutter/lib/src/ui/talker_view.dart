@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:talker_flutter/src/controller/controller.dart';
 import 'package:talker_flutter/src/ui/talker_monitor/talker_monitor.dart';

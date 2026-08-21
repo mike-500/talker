@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/src/ui/widgets/bottom_sheet.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
@@ -56,17 +56,19 @@ class _ActionTile extends StatelessWidget {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        ListTile(
-          onTap: () => _onTap(context),
-          title: Text(
-            action.title,
-            style: TextStyle(
-              color: talkerScreenTheme.textColor,
-              fontSize: 20,
-              fontWeight: FontWeight.w500,
+        Material(
+          child: ListTile(
+            onTap: () => _onTap(context),
+            title: Text(
+              action.title,
+              style: TextStyle(
+                color: talkerScreenTheme.textColor,
+                fontSize: 20,
+                fontWeight: FontWeight.w500,
+              ),
             ),
+            leading: Icon(action.icon, color: talkerScreenTheme.textColor),
           ),
-          leading: Icon(action.icon, color: talkerScreenTheme.textColor),
         ),
         if (showDivider)
           Divider(
