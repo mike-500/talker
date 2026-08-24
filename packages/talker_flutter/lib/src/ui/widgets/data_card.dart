@@ -4,7 +4,7 @@ import 'package:talker_flutter/talker_flutter.dart';
 
 class TalkerDataCard extends StatefulWidget {
   const TalkerDataCard({
-    Key? key,
+    super.key,
     required this.data,
     this.onCopyTap,
     this.onTap,
@@ -12,7 +12,7 @@ class TalkerDataCard extends StatefulWidget {
     this.margin,
     required this.color,
     this.backgroundColor = defaultCardBackgroundColor,
-  }) : super(key: key);
+  });
 
   final TalkerData data;
   final VoidCallback? onCopyTap;

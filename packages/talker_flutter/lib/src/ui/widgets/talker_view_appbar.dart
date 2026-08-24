@@ -5,7 +5,7 @@ import 'package:talker_flutter/talker_flutter.dart';
 
 class TalkerViewAppBar extends StatefulWidget {
   const TalkerViewAppBar({
-    Key? key,
+    super.key,
     required this.title,
     required this.leading,
     required this.talker,
@@ -17,7 +17,7 @@ class TalkerViewAppBar extends StatefulWidget {
     required this.onSettingsTap,
     required this.onActionsTap,
     required this.onToggleKey,
-  }) : super(key: key);
+  });
 
   final String? title;
   final Widget? leading;
@@ -281,11 +281,10 @@ class _SearchTextField extends StatelessWidget {
 
 class _MonitorButton extends StatelessWidget {
   const _MonitorButton({
-    Key? key,
     required this.talker,
     required this.onPressed,
     required this.talkerTheme,
-  }) : super(key: key);
+  });
 
   final Talker talker;
   final TalkerScreenTheme talkerTheme;

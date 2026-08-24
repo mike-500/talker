@@ -13,11 +13,10 @@ abstract interface class CustomSettingsItem<T> {
 
 class CustomSettingsItemBool extends CustomSettingsItem<bool> {
   CustomSettingsItemBool({
-    required String name,
-    required bool value,
+    required super.name,
+    required super.value,
     required Function(bool value) onChanged,
-  })  : _onChanged = onChanged,
-        super(name: name, value: value);
+  }) : _onChanged = onChanged;
 
   late final Function(bool value) _onChanged;
 

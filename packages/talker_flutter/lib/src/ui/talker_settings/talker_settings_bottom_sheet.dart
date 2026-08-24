@@ -7,11 +7,11 @@ import 'package:talker_flutter/talker_flutter.dart';
 
 class TalkerSettingsBottomSheet extends StatefulWidget {
   const TalkerSettingsBottomSheet({
-    Key? key,
+    super.key,
     required this.talkerScreenTheme,
     required this.talker,
     required this.customSettings,
-  }) : super(key: key);
+  });
 
   /// Theme for customize [TalkerScreen]
   final TalkerScreenTheme talkerScreenTheme;
@@ -98,17 +98,15 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
           ),
         ),
       ),
-      ...widget.talker.value.settings.registeredKeys
-          .map(
-            (key) => TalkerSettingsCard(
-              talkerScreenTheme: widget.talkerScreenTheme,
-              title: key,
-              enabled: talker.filter.disabledKeys.isEmpty ||
-                  !talker.filter.disabledKeys.contains(key),
-              onChanged: (enabled) => _toggleKeySelected(enabled, key),
-            ),
-          )
-          .toList(),
+      ...widget.talker.value.settings.registeredKeys.map(
+        (key) => TalkerSettingsCard(
+          talkerScreenTheme: widget.talkerScreenTheme,
+          title: key,
+          enabled: talker.filter.disabledKeys.isEmpty ||
+              !talker.filter.disabledKeys.contains(key),
+          onChanged: (enabled) => _toggleKeySelected(enabled, key),
+        ),
+      ),
       ...listenableCustomSettings.value.map(
         (CustomSettingsGroup group) {
           return Column(
