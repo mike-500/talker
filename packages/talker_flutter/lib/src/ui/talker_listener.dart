@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 /// It should be used for app functionality like
@@ -28,11 +28,11 @@ import 'package:talker_flutter/talker_flutter.dart';
 ///
 class TalkerListener extends StatefulWidget {
   const TalkerListener({
-    Key? key,
+    super.key,
     required this.child,
     required this.talker,
     required this.listener,
-  }) : super(key: key);
+  });
 
   /// An [Talker] implementation
   final Talker talker;

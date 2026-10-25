@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/src/ui/widgets/base_card.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 class TalkerMonitorCard extends StatelessWidget {
   const TalkerMonitorCard({
-    Key? key,
+    super.key,
     required this.logs,
     required this.title,
     this.subtitle,
@@ -13,7 +13,7 @@ class TalkerMonitorCard extends StatelessWidget {
     required this.icon,
     this.onTap,
     required this.theme,
-  }) : super(key: key);
+  });
 
   final String title;
   final String? subtitle;

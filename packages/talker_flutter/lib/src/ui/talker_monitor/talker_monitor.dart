@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/src/ui/talker_monitor/talker_monitor_typed_logs_screen.dart';
 import 'package:talker_flutter/src/ui/talker_monitor/widgets/widgets.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 class TalkerMonitor extends StatelessWidget {
   const TalkerMonitor({
-    Key? key,
+    super.key,
     required this.theme,
     required this.talker,
-  }) : super(key: key);
+  });
 
   /// Theme for customize [TalkerScreen]
   final TalkerScreenTheme theme;
@@ -66,7 +66,7 @@ class TalkerMonitor extends StatelessWidget {
                         RichText(
                           text: TextSpan(
                             text: '${httpRequests.length}',
-                            style: const TextStyle(color: Colors.white),
+                            style: Theme.of(context).textTheme.bodyMedium,
                             children: const [
                               TextSpan(text: ' http requests executed')
                             ],
@@ -75,11 +75,14 @@ class TalkerMonitor extends StatelessWidget {
                         RichText(
                           text: TextSpan(
                             text: '${httpResponses.length} successful',
-                            style: const TextStyle(color: Colors.green),
-                            children: const [
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(color: Colors.green),
+                            children: [
                               TextSpan(
                                 text: ' responses received',
-                                style: TextStyle(color: Colors.white),
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ],
                           ),
@@ -87,11 +90,14 @@ class TalkerMonitor extends StatelessWidget {
                         RichText(
                           text: TextSpan(
                             text: '${httpErrors.length} failure',
-                            style: const TextStyle(color: Colors.red),
-                            children: const [
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(color: Colors.red),
+                            children: [
                               TextSpan(
                                 text: ' responses received',
-                                style: TextStyle(color: Colors.white),
+                                style: Theme.of(context).textTheme.bodyMedium,
                               ),
                             ],
                           ),

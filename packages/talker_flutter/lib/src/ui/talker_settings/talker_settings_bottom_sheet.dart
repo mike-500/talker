@@ -1,17 +1,17 @@
 // ignore_for_file: invalid_use_of_protected_member, invalid_use_of_visible_for_testing_member
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/src/ui/talker_settings/widgets/talker_setting_card.dart';
 import 'package:talker_flutter/src/ui/widgets/bottom_sheet.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 class TalkerSettingsBottomSheet extends StatefulWidget {
   const TalkerSettingsBottomSheet({
-    Key? key,
+    super.key,
     required this.talkerScreenTheme,
     required this.talker,
     required this.customSettings,
-  }) : super(key: key);
+  });
 
   /// Theme for customize [TalkerScreen]
   final TalkerScreenTheme talkerScreenTheme;
@@ -42,7 +42,7 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
     final theme = Theme.of(context);
     final settings = <Widget>[
       Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
         child: Text(
           'Talker settings',
           style: theme.textTheme.titleLarge?.copyWith(
@@ -98,17 +98,15 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
           ),
         ),
       ),
-      ...widget.talker.value.settings.registeredKeys
-          .map(
-            (key) => TalkerSettingsCard(
-              talkerScreenTheme: widget.talkerScreenTheme,
-              title: key,
-              enabled: talker.filter.disabledKeys.isEmpty ||
-                  !talker.filter.disabledKeys.contains(key),
-              onChanged: (enabled) => _toggleKeySelected(enabled, key),
-            ),
-          )
-          .toList(),
+      ...widget.talker.value.settings.registeredKeys.map(
+        (key) => TalkerSettingsCard(
+          talkerScreenTheme: widget.talkerScreenTheme,
+          title: key,
+          enabled: talker.filter.disabledKeys.isEmpty ||
+              !talker.filter.disabledKeys.contains(key),
+          onChanged: (enabled) => _toggleKeySelected(enabled, key),
+        ),
+      ),
       ...listenableCustomSettings.value.map(
         (CustomSettingsGroup group) {
           return Column(
@@ -224,7 +222,7 @@ class _TalkerSettingsBottomSheetState extends State<TalkerSettingsBottomSheet> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const SizedBox(height: 16),
+          // const SizedBox(height: 16),
           ...settings,
         ],
       ),

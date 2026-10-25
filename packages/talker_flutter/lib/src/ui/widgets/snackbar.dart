@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SnackbarContent extends StatelessWidget {
   const SnackbarContent({
-    Key? key,
+    super.key,
     required this.message,
     required this.title,
     this.backgroundColor = Colors.red,
@@ -10,7 +10,7 @@ class SnackbarContent extends StatelessWidget {
     this.titleTextStyle,
     this.messageTextStyle,
     this.dismissButtonText,
-  }) : super(key: key);
+  });
 
   final String title;
   final String message;

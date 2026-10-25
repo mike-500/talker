@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:talker_flutter/src/controller/controller.dart';
 import 'package:talker_flutter/src/ui/talker_monitor/talker_monitor.dart';
@@ -9,7 +9,7 @@ import 'talker_actions/talker_actions.dart';
 
 class TalkerView extends StatefulWidget {
   const TalkerView({
-    Key? key,
+    super.key,
     required this.talker,
     this.controller,
     this.scrollController,
@@ -20,7 +20,7 @@ class TalkerView extends StatefulWidget {
     this.customSettings = const [],
     this.isLogsExpanded = true,
     this.isLogOrderReversed = true,
-  }) : super(key: key);
+  });
 
   /// Talker implementation
   final Talker talker;
@@ -116,6 +116,11 @@ class _TalkerViewState extends State<TalkerView> {
                         );
                       },
                       childCount: filteredElements.length,
+                    ),
+                  ),
+                  SliverPadding(
+                    padding: EdgeInsetsGeometry.only(
+                      bottom: MediaQuery.paddingOf(context).bottom,
                     ),
                   ),
                 ],
@@ -222,9 +227,9 @@ class _TalkerViewState extends State<TalkerView> {
               icon: Icons.delete_outline,
             ),
             TalkerActionItem(
-              onTap: _shareLogsInFile,
-              title: 'Share logs file',
-              icon: Icons.ios_share_outlined,
+              onTap: _saveLogsToFile,
+              title: 'Save logs locally',
+              icon: Icons.save_alt_outlined,
             ),
           ],
           talkerScreenTheme: widget.theme,
@@ -233,10 +238,26 @@ class _TalkerViewState extends State<TalkerView> {
     );
   }
 
-  Future<void> _shareLogsInFile() async {
-    await _controller.downloadLogsFile(
-      widget.talker.history.text(timeFormat: widget.talker.settings.timeFormat),
-    );
+  Future<void> _saveLogsToFile() async {
+    try {
+      await _controller.downloadLogsFile(
+        widget.talker.history.text(
+          timeFormat: widget.talker.settings.timeFormat,
+        ),
+      );
+      if (!mounted) return;
+      final fileLocation = _controller.lastSavedLogsFileLocation;
+      _showSnackBar(
+        context,
+        fileLocation == null
+            ? 'Logs file saved to temporary directory'
+            : 'Logs file saved: $fileLocation',
+      );
+    } catch (error, stackTrace) {
+      widget.talker.handle(error, stackTrace);
+      if (!mounted) return;
+      _showSnackBar(context, 'Failed to save logs file');
+    }
   }
 
   void _cleanHistory() {

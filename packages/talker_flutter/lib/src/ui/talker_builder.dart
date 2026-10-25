@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 typedef TalkerWidgetBuilder = Widget Function(
@@ -8,10 +8,10 @@ typedef TalkerWidgetBuilder = Widget Function(
 
 class TalkerBuilder extends StatelessWidget {
   const TalkerBuilder({
-    Key? key,
+    super.key,
     required this.talker,
     required this.builder,
-  }) : super(key: key);
+  });
 
   final Talker talker;
   final TalkerWidgetBuilder builder;

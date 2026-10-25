@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/services.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 class TalkerMonitorTypedLogsScreen extends StatelessWidget {
   const TalkerMonitorTypedLogsScreen({
-    Key? key,
+    super.key,
     required this.exceptions,
     required this.theme,
     required this.typeName,
-  }) : super(key: key);
+  });
 
   final String typeName;
   final TalkerScreenTheme theme;

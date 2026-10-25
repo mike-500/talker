@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/src/ui/theme/talker_screen_theme.dart';
 
 class TalkerBaseCard extends StatelessWidget {
   const TalkerBaseCard({
-    Key? key,
+    super.key,
     required this.child,
     required this.color,
     this.padding = const EdgeInsets.all(8),
     this.backgroundColor = defaultCardBackgroundColor,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Color color;
@@ -17,6 +17,8 @@ class TalkerBaseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final shape = Theme.of(context).cardTheme.shape;
+
     return Container(
       width: double.infinity,
       padding: padding,
@@ -24,7 +26,9 @@ class TalkerBaseCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor,
         border: Border.all(color: color),
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: shape is RoundedRectangleBorder
+            ? shape.borderRadius
+            : BorderRadius.circular(10),
       ),
       child: child,
     );

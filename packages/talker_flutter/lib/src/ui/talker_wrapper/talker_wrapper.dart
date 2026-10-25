@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 part 'talker_wrapper_options.dart';
@@ -13,11 +13,11 @@ part 'talker_wrapper_options.dart';
 /// error and exceptions messages output
 class TalkerWrapper extends StatelessWidget {
   const TalkerWrapper({
-    Key? key,
+    super.key,
     required this.talker,
     required this.child,
     this.options = const TalkerWrapperOptions(),
-  }) : super(key: key);
+  });
 
   final Talker talker;
   final Widget child;

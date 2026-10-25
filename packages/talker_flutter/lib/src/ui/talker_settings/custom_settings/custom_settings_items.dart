@@ -1,5 +1,5 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
+import 'package:material_ui/material_ui.dart';
 
 abstract interface class CustomSettingsItem<T> {
   CustomSettingsItem({required this.name, required this.value});
@@ -13,11 +13,10 @@ abstract interface class CustomSettingsItem<T> {
 
 class CustomSettingsItemBool extends CustomSettingsItem<bool> {
   CustomSettingsItemBool({
-    required String name,
-    required bool value,
+    required super.name,
+    required super.value,
     required Function(bool value) onChanged,
-  })  : _onChanged = onChanged,
-        super(name: name, value: value);
+  }) : _onChanged = onChanged;
 
   late final Function(bool value) _onChanged;
 

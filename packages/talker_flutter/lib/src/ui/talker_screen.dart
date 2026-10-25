@@ -1,10 +1,10 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:talker_flutter/talker_flutter.dart';
 
 /// UI view for output of all Talker logs and errors
 class TalkerScreen extends StatelessWidget {
   const TalkerScreen({
-    Key? key,
+    super.key,
     required this.talker,
     this.appBarTitle = 'Talker',
     this.theme = const TalkerScreenTheme(),
@@ -13,7 +13,7 @@ class TalkerScreen extends StatelessWidget {
     this.customSettings = const [],
     this.isLogsExpanded = true,
     this.isLogOrderReversed = true,
-  }) : super(key: key);
+  });
 
   /// Talker implementation
   final Talker talker;
