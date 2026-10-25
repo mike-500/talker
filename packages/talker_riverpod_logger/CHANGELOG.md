@@ -1,3 +1,37 @@
+# 5.2.0
+- - [talker_grpc_logger] Add streaming support, events and settings to talker_grpc_logger
+- [talker_grpc_logger] Fix malformed markdown table in Configuration section
+
+Thanks to [pavluke](https://github.com/pavluke)
+
+# 5.1.21
+- - [talker_http_logger] Process StreamedResponse
+- [talker_http_logger] Fix HTTP logger CI formatting failure
+
+Thanks to [chdanielmueller](https://github.com/chdanielmueller)
+
+# 5.1.20
+- [common] Update CI/CD dependencies
+- [common] Update Gradle to v9.6.1
+- [common] Update plugin org.jetbrains.kotlin.android to v2.4.10
+- [common] Update plugin org.jetbrains.kotlin.android to v2
+- [common] Update plugin com.android.application to v9.3.0
+
+Thanks to [Frezyx](https://github.com/Frezyx)
+
+# 5.1.19
+- [talker_flutter] Bump path_provider version from 2.1.4 to 2.1.6
+- [talker_flutter] Bump share_plus version from 3.0.0 to 3.2.0
+- [talker_flutter] Bump web version from 1.1.0 to 1.1.1
+
+Thanks to [Frezyx](https://github.com/Frezyx)
+
+# 5.1.18
+- [common] Update plugin com.android.application to v9.2.1
+- [common] Update Gradle to v9.5.0
+
+Thanks to [renovatebot](https://github.com/renovatebot)
+
 # 5.1.17
 - [talker_flutter] chore: bump share_plus from ^12.0.1 to ^13.0.0
 

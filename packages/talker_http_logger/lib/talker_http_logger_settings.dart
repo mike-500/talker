@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:http_interceptor/http_interceptor.dart'
     show BaseRequest, BaseResponse;
-import 'package:talker/talker.dart' show AnsiPen, LogLevel;
 import 'package:talker/talker.dart';
 
 typedef RequestFilter = bool Function(BaseRequest request);
@@ -22,6 +21,7 @@ class TalkerHttpLoggerSettings with EquatableMixin {
     this.printRequestData = true,
     this.printRequestHeaders = false,
     this.printRequestCurl = false,
+    this.processStreamedResponse = false,
     this.hiddenHeaders = const <String>{},
     this.jsonFormatter = const TalkerJsonFormatter(),
     this.requestPen,
@@ -70,6 +70,9 @@ class TalkerHttpLoggerSettings with EquatableMixin {
 
   /// Prints a curl request equivalent of the network call if true
   final bool printRequestCurl;
+
+  /// Process [StreamedResponse] if true. Use with caution as it may impact performance.
+  final bool processStreamedResponse;
 
   /// Field to set custom http request console logs color
   ///```
@@ -139,6 +142,7 @@ class TalkerHttpLoggerSettings with EquatableMixin {
     bool? printRequestData,
     bool? printRequestHeaders,
     bool? printRequestCurl,
+    bool? processStreamedResponse,
     AnsiPen? requestPen,
     AnsiPen? responsePen,
     AnsiPen? errorPen,
@@ -161,6 +165,8 @@ class TalkerHttpLoggerSettings with EquatableMixin {
         printRequestData: printRequestData ?? this.printRequestData,
         printRequestHeaders: printRequestHeaders ?? this.printRequestHeaders,
         printRequestCurl: printRequestCurl ?? this.printRequestCurl,
+        processStreamedResponse:
+            processStreamedResponse ?? this.processStreamedResponse,
         requestPen: requestPen ?? this.requestPen,
         responsePen: responsePen ?? this.responsePen,
         errorPen: errorPen ?? this.errorPen,
@@ -184,6 +190,7 @@ class TalkerHttpLoggerSettings with EquatableMixin {
         printRequestData,
         printRequestHeaders,
         printRequestCurl,
+        processStreamedResponse,
         requestPen,
         responsePen,
         errorPen,
