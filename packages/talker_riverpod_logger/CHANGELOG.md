@@ -1,3 +1,15 @@
+# 5.2.0
+- - [talker_grpc_logger] Add streaming support, events and settings to talker_grpc_logger
+- [talker_grpc_logger] Fix malformed markdown table in Configuration section
+
+Thanks to [pavluke](https://github.com/pavluke)
+
+# 5.1.21
+- - [talker_http_logger] Process StreamedResponse
+- [talker_http_logger] Fix HTTP logger CI formatting failure
+
+Thanks to [chdanielmueller](https://github.com/chdanielmueller)
+
 # 5.1.20
 - [common] Update CI/CD dependencies
 - [common] Update Gradle to v9.6.1
